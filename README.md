@@ -1,5 +1,5 @@
-# 🎛️ CoDeck
-<img width="2816" height="1536" alt="Gemini_Generated_Image_a7oiw3a7oiw3a7oi" src="https://github.com/user-attachments/assets/75a227de-df0c-4464-a0d6-8fccf5d46c66" />
+# CoDeck - Visualize your codebase and track the progress.
+<img width="2082" height="841" alt="Frame 1" src="https://github.com/user-attachments/assets/fc700ec4-cdc1-498d-afab-4aaef9bb0bbf" />
 
 **A visual map of your project — for you and everyone you want to show it to.**
 <img width="1510" height="843" alt="截屏2026-03-19 23 27 39" src="https://github.com/user-attachments/assets/c421b77d-8083-4ee9-9736-c62dd161c679" />
