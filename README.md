@@ -1,160 +1,69 @@
 # 🎛️ CoDeck
 
-**Your project, decoded. A visual control tower for vibe coders.**
+**把你的项目变成一张人人都能看懂的地图。**
 
-CoDeck is a Claude Code skill that scans your codebase and generates an interactive HTML dashboard — so you can *see* how your project works without reading a single line of code.
-
-You built it with AI. Now understand what you built.
+CoDeck 是一个 Claude Code skill，扫描你的代码库，生成一个交互式 HTML 仪表盘。不用读代码，也能清楚地看到项目里有什么、怎么运作、用户怎么用它。
 
 <!-- TODO: Add screenshot of a real CoDeck dashboard here -->
 <!-- ![CoDeck Dashboard](./assets/demo-screenshot.png) -->
 
-## The Problem
+---
 
-You're a vibe coder. You prompt AI, it writes code, you debug, iterate, ship. But somewhere along the way you lost track of what's actually going on inside your project. Which file does what? How does data flow from the login page to the database? What changed since last week?
+## 你会用到它的几个时刻
 
-You don't need to understand every line of code. But you need a map.
+**搞不清自己的项目了。** 你用 AI 搭了很久，改来改去，某一天突然不知道哪个文件是干嘛的了。打开 CoDeck，五分钟找回全局感。
 
-**CoDeck is that map.**
+**要向别人演示你在做什么。** 朋友问你这个项目是干嘛的，家人想知道你在搞什么，一个 `codeck.html` 发过去，不需要任何解释，他们自己就能点开看懂。
 
-## What You Get
+**准备 pitch 或汇报。** 投资人、合作方、导师，拉起 CoDeck 仪表盘，用户流程、系统架构、项目进度一目了然，比 PPT 更直接，也更真实。
 
-```
-/codeck > "generate codeck"
-```
+**刚让 AI 改完一堆东西。** 用 `update codeck` 做一次快照对比，看清这次改动影响了哪些部分，心里有底再继续。
 
-A single self-contained `codeck.html` file opens in your browser with five interactive tabs:
+---
 
-🏆 **Growth Story** — Your project's journey visualized. Commit timeline, code growth curve, contribution heatmap, and achievement badges that unlock as your project evolves. Designed to make you feel proud, not overwhelmed.
+## 生成之后你会看到什么
 
-⚙️ **How It Works** — The 3-5 core "machines" in your project as interactive pipeline diagrams. Click to see what happens when a user presses that button.
-
-🗺️ **User Journey** — Interactive flowchart showing how users move through your product. Happy paths highlighted, branches revealed on hover.
-
-🏗️ **Architecture** — Layered view of your project (UI → Logic → Data). **Every file is clickable** — expand to see a plain-language explanation of what it does, who it talks to, and when it was last modified.
-
-📊 **Project Health** — File count, dependencies, TODOs, activity heatmap. The vitals at a glance.
-
-## Features
-
-- **Zero Dependencies** — Single HTML file with inline CSS/JS. Open in any browser. No npm, no build tools.
-- **Anti-AI-Slop Design** — CoDeck has its own design system (Manrope + Inter, M3 surface tokens, indigo accent, ultra-light shadows). Every dashboard looks polished and consistent — not like generic AI output.
-- **Per-File Drill-Down** — Click any file in the architecture view to see what it does in plain language. Like a name badge for every file in your project.
-- **Auto Language Detection** — Dashboard language (English/Chinese) is detected from your README, comments, and commit messages. Mixed signals? CoDeck asks instead of guessing.
-- **Sync with Your Project** — Manual update (`update codeck`) or automatic git hook that reminds you after every commit.
-- **Complexity Calibration** — Simple project gets a clean single-page dashboard. Complex monorepo gets sidebar navigation, search, animated data flows.
-- **Achievement System** — Milestones like "First Commit", "100 Commits", "First Release" unlock automatically from git history, each with its own Material Symbols icon. Locked badges show what's next.
-
-## Quick Start
-
-### Install (Claude Code)
-
-```bash
-# Project-level (recommended — travels with your repo)
-mkdir -p .claude/skills
-git clone https://github.com/YOUR_USERNAME/codeck.git .claude/skills/codeck
-
-# Or global (available in all projects)
-git clone https://github.com/YOUR_USERNAME/codeck.git ~/.claude/skills/codeck
-```
-
-### Use
-
-In Claude Code, just say:
+在 Claude Code 里说一句：
 
 ```
 generate codeck
 ```
 
-That's it. Claude scans your project and creates `codeck.html` in the project root. Open it in your browser.
+项目根目录会出现一个 `codeck.html`，在浏览器里打开，有五个标签页：
 
-### Update
+🏆 **成长故事** — 提交时间线、代码量曲线、里程碑徽章。从零到现在，你做了多少。
 
-```
-update codeck
-```
+⚙️ **运作机制** — 项目里那几个核心流程的可视化管线图。点击任意一步，看清数据是怎么流动的。
 
-CoDeck diffs against the previous snapshot and highlights what changed since last time — the most valuable information for someone who just asked AI to modify their code.
+🗺️ **用户旅程** — 用户从进入到完成操作的完整路径图，每个分支都能展开。
 
-### Auto-Sync (Optional)
+🏗️ **项目架构** — 按 UI → 逻辑 → 数据分层展示。每个文件都可以点开，看一句话说清它是干嘛的。
 
-```
-set up auto-update for codeck
-```
+📊 **项目健康** — 文件数、依赖项、TODO 数量、活跃度热力图。
 
-Installs a git post-commit hook. After every commit, you'll see:
+---
 
-```
-[CoDeck] Project changed since last dashboard update.
-[CoDeck] Run: update codeck
-```
+## 几个实用细节
 
-## How It's Built
+- **单文件，零依赖** — 生成的是一个独立 HTML 文件，发给任何人都能直接打开，不需要安装任何东西。
+- **自动识别语言** — 根据你的 README、注释和提交记录判断用中文还是英文生成，拿不准的时候会问你。
+- **跟项目保持同步** — 手动跑 `update codeck` 做增量更新，或者装一个 git hook，每次提交后自动提醒你。
+- **复杂度自适应** — 小项目出简洁单页，大型 monorepo 会自动加侧边栏导航和搜索。
 
-This skill uses progressive disclosure — the main SKILL.md is a concise workflow (~270 lines), with design principles and scripts loaded only when needed:
+---
 
-```
-codeck/
-├── SKILL.md                        # Core instructions (270 lines)
-│   ├── Step 1: Scan project        #   Automated code analysis
-│   ├── Step 1.5: File roles        #   Per-file plain-language descriptions
-│   ├── Step 2: Build mental model  #   5 models: Growth → Mechanisms → Journeys → Architecture → Health
-│   ├── Step 3: Detect language     #   Multi-signal (README + comments + commits + package.json)
-│   ├── Step 4: Generate HTML       #   Self-contained dashboard with CoDeck design system
-│   └── Step 5: Write snapshot      #   JSON for diffing on future updates
-├── references/
-│   └── design-principles.md        # Complete CoDeck visual language (322 lines)
-│       ├── M3 color system          #   Exact Tailwind config with semantic tokens
-│       ├── Component patterns       #   7 reusable HTML templates
-│       ├── Motion & interaction     #   Animation specs
-│       └── UI robustness rules      #   Overflow/layout bug prevention
-└── scripts/
-    ├── scan_project.sh             # Automated project scanner (tech stack, files, git history, language signals)
-    └── setup_git_hook.sh           # One-command git hook installer
+## 快速上手
+
+```bash
+# 装在项目里（推荐，跟着仓库走）
+mkdir -p .claude/skills
+git clone https://github.com/YOUR_USERNAME/codeck.git .claude/skills/codeck
 ```
 
-The design language is not a suggestion — it's a specification. Every CoDeck dashboard uses the exact same color tokens, font pairing, component patterns, and shadow values. This is what makes CoDeck outputs look consistent instead of random.
+然后在 Claude Code 里直接说 `generate codeck` 就行。
 
-## What the Output Looks Like
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Manrope + Inter fonts, Material Symbols, Tailwind CSS -->
-  <!-- CoDeck M3 color system via Tailwind config -->
-</head>
-<body class="bg-surface text-on-surface">
-  <!-- TopNavBar: fixed, backdrop-blur, tab navigation -->
-  <!-- Bento Grid Layout: 12-column responsive grid -->
-  <!--   Growth Story: timeline + heatmap + achievements -->
-  <!--   Mechanisms: interactive pipeline diagrams -->
-  <!--   Journeys: funnel visualization -->
-  <!--   Architecture: file table with click-to-expand roles -->
-  <!--   Health: stat cards + progress bars -->
-  <!-- Floating toast: sync status indicator -->
-</body>
-</html>
-```
-
-One file. No dependencies. Works in 2035.
-
-## Beliefs
-
-**You don't need to read code to understand your project.** You need a visual map that speaks your language.
-
-**Growth deserves celebration.** The first tab isn't architecture or health metrics — it's your achievement wall. Every commit is progress.
-
-**Consistency is a feature.** CoDeck doesn't generate a random design each time. It has a brand — same fonts, same colors, same components. You recognize a CoDeck dashboard instantly.
-
-**If you can't tell, ask.** CoDeck doesn't silently default to English when your project is half-Chinese. It detects, and when unsure, it asks.
-
-**One HTML file is enough.** Dependencies are debt. A single self-contained file will open on any machine, any browser, any decade from now.
+---
 
 ## License
 
 MIT
-
-## Credits
-
-Created with Claude Code. Built for the vibe coding community — people who ship products without being traditional software engineers.
