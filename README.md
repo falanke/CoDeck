@@ -5,9 +5,9 @@
 
 CoDeck is a Claude Code skill that scans your codebase and generates an interactive HTML dashboard — so you can *see* how your project works without reading a single line of code.
 
-You built it with AI. Now understand what you built.
 
-<img width="1510" height="843" alt="截屏2026-03-19 23 27 39" src="https://github.com/user-attachments/assets/c421b77d-8083-4ee9-9736-c62dd161c679" />
+https://github.com/user-attachments/assets/22b793ec-0ab1-4587-b914-942caf9ed767
+
 
 ## The Problem
 
@@ -52,10 +52,10 @@ A single self-contained `codeck.html` file opens in your browser with five inter
 ```bash
 # Project-level (recommended — travels with your repo)
 mkdir -p .claude/skills
-git clone https://github.com/YOUR_USERNAME/codeck.git .claude/skills/codeck
+git clone https://github.com/falanke/codeck.git .claude/skills/codeck
 
 # Or global (available in all projects)
-git clone https://github.com/YOUR_USERNAME/codeck.git ~/.claude/skills/codeck
+git clone https://github.com/falanke/codeck.git ~/.claude/skills/codeck
 ```
 
 ### Use
@@ -116,28 +116,9 @@ codeck/
 The design language is not a suggestion — it's a specification. Every CoDeck dashboard uses the exact same color tokens, font pairing, component patterns, and shadow values. This is what makes CoDeck outputs look consistent instead of random.
 
 ## What the Output Looks Like
+<img width="1510" height="843" alt="截屏2026-03-19 23 27 39" src="https://github.com/user-attachments/assets/c421b77d-8083-4ee9-9736-c62dd161c679" />
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Manrope + Inter fonts, Material Symbols, Tailwind CSS -->
-  <!-- CoDeck M3 color system via Tailwind config -->
-</head>
-<body class="bg-surface text-on-surface">
-  <!-- TopNavBar: fixed, backdrop-blur, tab navigation -->
-  <!-- Bento Grid Layout: 12-column responsive grid -->
-  <!--   Growth Story: timeline + heatmap + achievements -->
-  <!--   Mechanisms: interactive pipeline diagrams -->
-  <!--   Journeys: funnel visualization -->
-  <!--   Architecture: file table with click-to-expand roles -->
-  <!--   Health: stat cards + progress bars -->
-  <!-- Floating toast: sync status indicator -->
-</body>
-</html>
-```
-
-One file. No dependencies. Works in 2035.
+One file in HTML. No dependencies. Works in 2035.
 
 ## Beliefs
 
