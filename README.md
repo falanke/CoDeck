@@ -1,6 +1,8 @@
 # 🎛️ CoDeck
+<img width="2816" height="1536" alt="Gemini_Generated_Image_a7oiw3a7oiw3a7oi" src="https://github.com/user-attachments/assets/75a227de-df0c-4464-a0d6-8fccf5d46c66" />
 
 **A visual map of your project — for you and everyone you want to show it to.**
+<img width="1510" height="843" alt="截屏2026-03-19 23 27 39" src="https://github.com/user-attachments/assets/c421b77d-8083-4ee9-9736-c62dd161c679" />
 
 [中文版](README.zh.md)
 
@@ -59,7 +61,7 @@ A `codeck.html` file appears in your project root. Open it in any browser — fi
 ```bash
 # Project-level install (recommended — travels with your repo)
 mkdir -p .claude/skills
-git clone https://github.com/YOUR_USERNAME/codeck.git .claude/skills/codeck
+git clone https://github.com/falanke/codeck.git .claude/skills/codeck
 ```
 
 Then in Claude Code, just say `generate codeck`.
