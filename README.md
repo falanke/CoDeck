@@ -47,8 +47,9 @@ A single self-contained `codeck.html` file opens in your browser with five inter
 
 ## Quick Start
 
-### Install (Claude Code)
+### Install 
 
+#### Claude Code
 ```bash
 # Project-level (recommended — travels with your repo)
 mkdir -p .claude/skills
@@ -57,6 +58,9 @@ git clone https://github.com/falanke/codeck.git .claude/skills/codeck
 # Or global (available in all projects)
 git clone https://github.com/falanke/codeck.git ~/.claude/skills/codeck
 ```
+#### Claude Cowork
+Download .zip file and install in **Customize → SKills → Upload a skill**, and import .zip file.
+<img width="1312" height="912" alt="截屏2026-03-21 09 17 19" src="https://github.com/user-attachments/assets/c5ab9076-9753-4e4f-a470-8e00cc1e3c88" />
 
 ### Use
 
@@ -139,3 +143,4 @@ MIT
 ## Credits
 
 Created with Claude Code. Built for the vibe coding community — people who ship products without being traditional software engineers.
+Feel free to edit and improve it. Star it if you feels helpful.
